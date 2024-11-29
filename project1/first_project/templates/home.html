@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sender page</title>
+</head>
+<body>
+    <h1>I am the sender page of this application</h1>
+    <p>click the below button to send the event to the backend</p>
+    <form action="{% url 'sender'%}" method="post">
+        {% csrf_token %}
+        <label for="">Enter the First number : </label>
+        <input type="number" name="first_number" required>
+        <label for="">Enter the Second number : </label>
+        <input type="number" name="second_number" required>
+        <label for="">Select the type of operation:</label>
+        <select name="operation" id="">
+        <option value="addition">addition</option>
+        <option value="substraction">substraction</option>
+        </select>
+
+        <button  type="submit">Click Me</button>
+    </form>
+</body>
+</html>
